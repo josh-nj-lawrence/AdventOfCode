@@ -9,24 +9,16 @@ class solution():
             lines = file.readlines()
             lines = [item.rstrip() for item in lines]
         score = 0
-        for line in lines:
-            # Split into compartments
-            comp1 = line[:len(line)//2]
-            comp2 = line[(len(line)//2):]
-            
-            # find common elements
+        groups = [lines[x:x+3] for x in range(0, len(lines), 3)]
+
+        #print(lines)
+        for group in groups:
             common = ""
-            for c in comp1:
-                if c in comp2:
+            for c in group[0]:
+                if c in group[1] and c in group[2]:
                     common = c
-            if common in alphabet_upper:
-                score += alphabet_upper.index(common) + 27
-            else:
-                score += alphabet.index(common) + 1
-            
-            # Add common scores
+            score += alphabet.index(common)+1 if common in alphabet else alphabet_upper.index(common)+27
         return score
-        
 
 
 solution = solution()
