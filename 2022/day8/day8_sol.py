@@ -1,3 +1,4 @@
+# Solution from AoC Reddit - will compare against my attempt and resolve issues
 from math import prod
 f = [[int(j) for j in list(i)] for i in open("day8_input.txt").read().strip().split("\n")]
 

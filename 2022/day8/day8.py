@@ -86,6 +86,3 @@ class solution():
         
 solution = solution()
 print(solution.solution("day8_input.txt"))
-
-# 5232240
-# 5755197
